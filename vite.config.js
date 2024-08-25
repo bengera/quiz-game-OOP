@@ -9,6 +9,7 @@ export default defineConfig({
   ],
   build: {
     outDir: '../dist',
+    emptyOutDir: true,
     assetsInlineLimit: 0, // Disable inline asset embedding for all asset types
     rollupOptions: {
       input: {

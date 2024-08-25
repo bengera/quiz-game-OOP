@@ -5,14 +5,44 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>Vite App</title>
+    <title>Quiz App</title>
     <link rel="stylesheet" href="./sass/main.scss">
     <script type="module" src="./js/main.js"></script>
   </head>
   <body>
-    <h1>Home page</h1>
-    <a href="/about/">link to about page</a>
-    <a href="/pagethree/">link to pagethree</a>
+    <main>
+      <div class="app">
+    <h1>Quiz Game</h1>
+    <fieldset>
+      <legend>What is the capital city of Peru?</legend>
+
+      <div class="option-block">
+        <label for="lima">
+        <input type="radio" id="lima" name="capital" value="lima">
+        Lima
+      </label>
+      </div>
+
+      <div class="option-block">
+        <input type="radio" id="la Paz" name="capital" value="la Paz">
+        <label for="la paz">La Paz</label>
+      </div>
+
+      <div class="option-block">
+        <input type="radio" id="buenos aires" name="capital" value="buenos aires">
+        <label for="buenos aires">Buenos Aires</label>
+      </div>
+
+      <div class="option-block">
+        <input type="radio" id="caracas" name="capital" value="caracas">
+        <label for="caracaas">Caracas</label>
+      </div>
+
+    </fieldset>
     
+    <button type="submit" class="btn-submit">Submit</button>
+    
+  </div>
+  </main>
   </body>
 </html>
