@@ -14,8 +14,7 @@ body {
 }
 
 .option-block {
-  padding: 1rem 2rem;
-  cursor: pointer;
+  // padding: 1rem 2rem;
   border-bottom: 0.3px solid rgb(233, 233, 233);
 
   &:hover {
@@ -25,9 +24,21 @@ body {
 }
 
 
-input[type="radio"]{
-  display: none;
+// input[type="radio"]{
+//   display: none;
 
+  
+// }
+
+input[type="radio"]:checked+label{
+background-color: red;
+}
+
+label {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  // border: 1px solid red;
   
 }
 

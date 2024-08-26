@@ -6,7 +6,6 @@ class Question { // defines a blueprint(template) for creating `Question` object
         this.correct = correct;
         
     }
-
    printQuestion(){
     //'this' keyword refers to the current instance of `Question` class (allows access to properties like question and choice)
     // map method creates a new array and applies the function to each element of the original array
