@@ -14,8 +14,8 @@ body {
 }
 
 .option-block {
-  // padding: 1rem 2rem;
-  border-bottom: 0.3px solid rgb(233, 233, 233);
+  padding: 1rem;
+   
 
   &:hover {
     background-color: rgb(204, 232, 248);
@@ -36,7 +36,10 @@ background-color: red;
 
 label {
   display: block;
+  padding: 1rem;
+  border-bottom: 0.3px solid rgb(233, 233, 233);
   width: 100%;
+  height: 100%;
   cursor: pointer;
   // border: 1px solid red;
   
