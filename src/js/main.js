@@ -1,7 +1,6 @@
 const legend = document.querySelector('legend');
 const container = document.querySelector('.options-container');
 
-
 class Question { 
        
     constructor(question, choices, correct){ 
@@ -39,6 +38,10 @@ class Question {
             buttonSubmit.textContent = 'Submit';
             container.appendChild(buttonSubmit);
     }
+
+    checkAnswer(){
+
+    }
        
         
     }
@@ -55,7 +58,11 @@ let currentIndex = 0;
         }
     }
 
-      
+// event listener
+container.addEventListener('click',(e) =>{
+    e.preventDefault();
+    console.log('container clicked');
+})
 
 
 const questions = [
