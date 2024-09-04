@@ -35,28 +35,46 @@ class Question {
             
         })
 
-        const buttonSubmit = document.createElement('button');
-            buttonSubmit.classList.add('btn-submit');
-            buttonSubmit.type = 'submit';
-            buttonSubmit.textContent = 'Submit';
-            container.appendChild(buttonSubmit);
+            this.buttonSubmit = document.createElement('button');
+            this.buttonSubmit.classList.add('btn-submit');
+            this.buttonSubmit.type = 'submit';
+            this.buttonSubmit.textContent = 'Submit';
+            container.appendChild(this.buttonSubmit);
             
-            buttonSubmit.addEventListener('click',submit);
+            this.buttonSubmit.addEventListener('click',submit);
     }
 
     checkAnswer(selected){
       console.log(`Your final answer is ${selected}`);
       if (selected === this.correct ){
         console.log(`${selected} is the correct answer! ✔`);
+        this.changeButtonCorrect();
         score++;
         currentIndex++;
+        setTimeout(() => {
+            showCurrentQuestion();
+        }, 2000)
         updateScore();
-        showCurrentQuestion();
+        
       } else {
         console.log(`${selected} is incorrect ❌`)
+        this.changeButtonIncorrect();
         currentIndex++;
-        showCurrentQuestion();
+        setTimeout(() => {
+            showCurrentQuestion();
+        }, 2000)
+        
       }
+    }
+
+    changeButtonCorrect(){
+        this.buttonSubmit.classList.add('correct');
+        this.buttonSubmit.textContent ='Correct!';
+    }
+
+    changeButtonIncorrect(){
+        this.buttonSubmit.classList.add('incorrect');
+        this.buttonSubmit.textContent ='Incorrect!';
     }
        
         
@@ -93,6 +111,8 @@ function updateScore(){
     scoreEl.textContent = score;
 }
 
+
+
 const questions = [
     new Question(
         "Which desert is the largest in the world?", ['Sahara', 'Arctic', 'Gobi', 'Antarctic'], "Antarctic"
@@ -103,57 +123,7 @@ const questions = [
     new Question(
         "Which river flows through the Grand Canyon?", ['Missouri', 'Colorado', 'Mississippi', 'Snake'], "Colorado"
     ),
-    new Question(
-        "What is the capital city of Australia?", ['Sydney', 'Melbourne', 'Canberra', 'Perth'], "Canberra"
-    ),
-    new Question(
-        "Which country has the most islands in the world?", ['Canada', 'Indonesia', 'Sweden', 'Norway'], "Sweden"
-    ),
-    new Question(
-        "The Great Barrier Reef is located off the coast of which Australian state?", ['Queensland', 'New South Wales', 'Victoria', 'Western Australia'], "Queensland"
-    ),
-    new Question(
-        "What is the smallest country in the world by land area?", ['Monaco', 'San Marino', 'Liechtenstein', 'Vatican City'], "Vatican City"
-    ),
-    new Question(
-        "Which country is known as the Land of the Rising Sun?", ['China', 'South Korea', 'Japan', 'Thailand'], "Japan"
-    ),
-    new Question(
-        "What is the capital of Canada?", ['Toronto', 'Ottawa', 'Vancouver', 'Montreal'], "Ottawa"
-    ),
-    new Question(
-        "Which European country is divided into 26 cantons?", ['Germany', 'Belgium', 'Switzerland', 'Austria'], "Switzerland"
-    ),
-    new Question(
-        "Which river is the longest in Europe?", ['Volga', 'Danube', 'Dnieper', 'Rhine'], "Volga"
-    ),
-    new Question(
-        "Which continent is the only one without a desert?", ['Europe', 'Asia', 'Africa', 'North America'], "Europe"
-    ),
-    new Question(
-        "What is the largest country in South America by area?", ['Argentina', 'Brazil', 'Peru', 'Colombia'], "Brazil"
-    ),
-    new Question(
-        "Which ocean is the largest by surface area?", ['Atlantic', 'Indian', 'Arctic', 'Pacific'], "Pacific"
-    ),
-    new Question(
-        "Which country has the most time zones?", ['United States', 'Russia', 'France', 'Australia'], "France"
-    ),
-    new Question(
-        "Which city is known as the City of Canals?", ['Venice', 'Amsterdam', 'Bangkok', 'St. Petersburg'], "Venice"
-    ),
-    new Question(
-        "Which country has the highest population density?", ['Monaco', 'Singapore', 'Bangladesh', 'Malta'], "Monaco"
-    ),
-    new Question(
-        "The Andes mountain range runs through which continent?", ['Asia', 'Europe', 'South America', 'Africa'], "South America"
-    ),
-    new Question(
-        "What is the tallest mountain in North America?", ['Denali', 'Mount Logan', 'Pico de Orizaba', 'Mount Elbert'], "Denali"
-    ),
-    new Question(
-        "Which African country was formerly known as Abyssinia?", ['Ethiopia', 'Somalia', 'Sudan', 'Eritrea'], "Ethiopia"
-    ),
+
 ];
 
 
