@@ -40,7 +40,7 @@ class Question {
             optionBlock.appendChild(input);
             
         })
-            // store button as instance property
+            // store button as instance property so it can be accessed through other methods
             this.buttonSubmit = document.createElement('button');
             this.buttonSubmit.classList.add('btn-submit');
             this.buttonSubmit.type = 'submit';
@@ -70,6 +70,19 @@ class Question {
         this.changeButtonIncorrect();
         currentIndex++;
         currentQuestion++;
+        // highlight correct answer
+        // Loop through option blocks, if block's inner content is equal to
+        // this.correct text then change background color of that option block.
+        this.choices.forEach((choice, idx) =>{
+            //On each loop, idx changes, so container.querySelectorAll('.option-block')[idx] selects a different .option-block.
+           const optionBlock = container.querySelectorAll('.option-block')[idx];
+           if (choice === this.correct){
+            optionBlock.classList.add('correct-highlight');
+           }
+            
+        })
+
+
         setTimeout(() => {
             showCurrentQuestion();
         }, 2000)
