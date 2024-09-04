@@ -1,3 +1,4 @@
+const title = document.querySelector('h1');
 const legend = document.querySelector('legend');
 const container = document.querySelector('.options-container');
 const scoreEl = document.querySelector('.score');
@@ -34,7 +35,7 @@ class Question {
             optionBlock.appendChild(input);
             
         })
-
+            // store button as instance property
             this.buttonSubmit = document.createElement('button');
             this.buttonSubmit.classList.add('btn-submit');
             this.buttonSubmit.type = 'submit';
@@ -91,6 +92,8 @@ let score = 0;
             questions[currentIndex].printQuestion();
         } else {
             console.log('There are no more questions');
+            title.textContent = 'Game over';
+
         }
     }
 
