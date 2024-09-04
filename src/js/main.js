@@ -9,7 +9,7 @@ class Question {
         this.correct = correct;
         
     }
- 
+    // create Quiz elements
     printQuestion() {
         legend.textContent = this.question;
         this.choices.forEach((choice, idx) =>{
@@ -37,10 +37,13 @@ class Question {
             buttonSubmit.type = 'submit';
             buttonSubmit.textContent = 'Submit';
             container.appendChild(buttonSubmit);
+            
+            // buttonSubmit.addEventListener('click',submit);
     }
 
-    checkAnswer(){
-
+    checkAnswer(selected){
+      console.log(`Your answer is ${selected}`);
+      
     }
        
         
@@ -58,11 +61,28 @@ let currentIndex = 0;
         }
     }
 
-// event listener
-container.addEventListener('click',(e) =>{
-    e.preventDefault();
-    console.log('container clicked');
-})
+// event listeners
+// Listen for change
+container.addEventListener('change',(e) =>{
+   console.log('change detected 🌟');
+   const buttonEl = e.target.parentElement.parentElement.lastChild;
+   console.log(buttonEl);
+     if (buttonEl){
+         console.log('button exists ✅');
+         submit(e);
+     } else {
+         console.log('this is not a button')
+     }
+     
+ })
+
+function submit(e) {
+    const selected = e.target.value;
+    console.log(`${selected} selected`);
+    questions[currentIndex].checkAnswer(selected);
+
+}
+
 
 
 const questions = [
