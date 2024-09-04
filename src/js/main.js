@@ -1,5 +1,6 @@
 const legend = document.querySelector('legend');
 const container = document.querySelector('.options-container');
+const scoreEl = document.querySelector('.score');
 
 class Question { 
        
@@ -47,10 +48,14 @@ class Question {
       console.log(`Your final answer is ${selected}`);
       if (selected === this.correct ){
         console.log(`${selected} is the correct answer! ✔`);
+        score++;
         currentIndex++;
+        updateScore();
         showCurrentQuestion();
       } else {
         console.log(`${selected} is incorrect ❌`)
+        currentIndex++;
+        showCurrentQuestion();
       }
     }
        
@@ -58,6 +63,7 @@ class Question {
     }
 
 let currentIndex = 0;
+let score = 0;
 
 
     // state management
@@ -80,6 +86,11 @@ function submit() {
     } else {
         console.log('no option selected');
     }
+}
+
+function updateScore(){
+    console.log('score updated 1️⃣');
+    scoreEl.textContent = score;
 }
 
 const questions = [

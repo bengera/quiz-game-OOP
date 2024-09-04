@@ -8,9 +8,27 @@ body {
   line-height: 1.5;
   
 }
+
+
 .app {
   padding:1rem;
   
+}
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+ 
+}
+
+.score {
+  font-size: fs(600);
+  padding: 1rem;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 10px;
 }
 
 .option-block {
