@@ -2,6 +2,9 @@ const title = document.querySelector('h1');
 const legend = document.querySelector('legend');
 const container = document.querySelector('.options-container');
 const scoreEl = document.querySelector('.score');
+let currentIndex = 0;
+let currentQuestion = 1;
+let score = 0;
 
 class Question { 
        
@@ -16,6 +19,8 @@ class Question {
         container.innerHTML = '';
 
         legend.textContent = this.question;
+        title.textContent = `Q-${currentQuestion}`;
+        scoreEl.textContent = `Score: ${score} / ${questions.length}`;
         this.choices.forEach((choice, idx) =>{
             const optionBlock = document.createElement('div');
             optionBlock.classList.add('option-block');
@@ -53,15 +58,18 @@ class Question {
         this.changeButtonCorrect();
         score++;
         currentIndex++;
+        currentQuestion++;
+        scoreEl.textContent = `Score: ${score} / ${questions.length}`;
         setTimeout(() => {
             showCurrentQuestion();
         }, 2000)
-        updateScore();
+        
         
       } else {
         console.log(`${selected} is incorrect ❌`)
         this.changeButtonIncorrect();
         currentIndex++;
+        currentQuestion++;
         setTimeout(() => {
             showCurrentQuestion();
         }, 2000)
@@ -82,12 +90,10 @@ class Question {
         
     }
 
-let currentIndex = 0;
-let score = 0;
-
 
     // state management
     function showCurrentQuestion(){
+        
         if (currentIndex < questions.length){
             questions[currentIndex].printQuestion();
         } else {
@@ -110,12 +116,6 @@ function submit() {
     }
 }
 
-function updateScore(){
-    console.log('score updated 1️⃣');
-    scoreEl.textContent = score;
-}
-
-
 
 const questions = [
     new Question(
@@ -127,9 +127,17 @@ const questions = [
     new Question(
         "Which river flows through the Grand Canyon?", ['Missouri', 'Colorado', 'Mississippi', 'Snake'], "Colorado"
     ),
-
+    new Question(
+        "Which country is known as the Land of the Rising Sun?", ['China', 'South Korea', 'Japan', 'Thailand'], "Japan"
+    ),
+    new Question(
+        "What is the capital of Canada?", ['Toronto', 'Ottawa', 'Vancouver', 'Montreal'], "Ottawa"
+    ),
+    new Question(
+        "Which European country is divided into 26 cantons?", ['Germany', 'Belgium', 'Switzerland', 'Austria'], "Switzerland"
+    ),
 ];
 
-
 showCurrentQuestion();
+
 
