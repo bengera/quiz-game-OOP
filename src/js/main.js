@@ -46,6 +46,7 @@ class Question {
 
     checkAnswer(selected){
       console.log(`Your final answer is ${selected}`);
+      this.buttonSubmit.disabled = true;
       if (selected === this.correct ){
         console.log(`${selected} is the correct answer! ✔`);
         this.changeButtonCorrect();
