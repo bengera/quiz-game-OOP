@@ -24,7 +24,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![](./screenshot.png)
+![ScreenShot](screenshot.png)
 
 
 ### Built With
