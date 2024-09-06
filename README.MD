@@ -24,10 +24,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
- <img src="screenshot.png" alt="Logo" style="width: 500px; height: auto">
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+ <img src="screenshot.png" alt="Screenshot">
 
 
 ### Built With
@@ -39,7 +36,6 @@
 <br />
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -80,9 +76,10 @@ printQuestion() {
 ```
 
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ## Contact
 Created by [Ben Geraghty](https://bengeraghty.com) - feel free to contact me! ✉
+
+
