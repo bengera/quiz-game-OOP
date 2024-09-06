@@ -24,7 +24,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![ScreenShot](https://github.com/bengera/quiz-game-OOP/blob/master/screenshot.png?raw=true)
+![ScreenShot](https://github.com/bengera/quiz-game-OOP/blob/master/screenshot.PNG)
 
 
 
