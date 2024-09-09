@@ -44,6 +44,17 @@
 <!-- ROADMAP -->
 ## Code snippets
 There is a class named Question, this has 4 methods that include displaying questions, checking answers, and changing the submit buttons color's if the answer is correct or incorrect.
+```JS
+class Question { 
+       
+    constructor(question, choices, correct){ 
+        this.question = question;
+        this.choices = choices;
+        this.correct = correct;
+        
+    }
+}
+```
 <br />
 <br />
 🟨 This function manages which question is being shown depending on the currentIndex.
